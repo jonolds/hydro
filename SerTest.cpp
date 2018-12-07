@@ -15,7 +15,7 @@ int main () {
 
   serialFlush(fd);
   while(true) {
-	serialPutchar(fd, 'p');
+	serialPutchar(fd, 'a');
     putchar(serialGetchar(fd));
 
     fflush(stdout);

@@ -1,5 +1,4 @@
-/*** C++ ***/
-
+/*** RASPBERRY PI ***********************/
 #include <stdio.h>
 #include <string.h>
 #include <errno.h>
@@ -26,12 +25,11 @@ int main () {
   usleep(900000);
 }
 
-/*** ARDUINO ***/
+/*** ARDUINO *****************************/
 
 void setup() {
     Serial.begin(9600); //opens serial port, sets data rate to 9600 baud
 }
-
 void loop() {
 
     if(Serial.available()>0) { 
@@ -46,10 +44,7 @@ void loop() {
     delay(2000);
 }
 
-/***  OUTPUT ***/
-pppppp pppppp
-pppppppppppp
-
+/***  OUTPUT ***********************************/
 12.13
 ppppppppppppp pppp pppp
 12.13
@@ -65,5 +60,9 @@ ppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp
 12.13
 ppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp
 12.13
-ppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp
-12.13
+10  aaaa aaaa aa
+19  aaaa aaaa aaaa aaaa aaa
+28  aaaa aaaa aaaa aaaa aaaa aaaa aaaa
+37  aaaa aaaa aaaa aaaa aaaa aaaa aaaa aaaa aaaa a
+46  aaaa aaaa aaaa aaaa aaaa aaaa aaaa aaaa aaaa aaaa aaaa aa
+55  aaaa aaaa aaaa aaaa aaaa aaaa aaaa aaaa aaaa aaaa aaaa aaaa aaaa aaa
