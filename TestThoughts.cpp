@@ -46,20 +46,10 @@ void loop() {
 
 /***  OUTPUT ***********************************/
 12.13
-ppppppppppppp pppp pppp
+ppppppppppppppppppppp
 12.13
 pppppppppppppppppppppppppppppp
-12.13
-ppppppppppppppppppppppppppppppppppppppp
-12.13
-pppppppppppppppppppppppppppppppppppppppppppppppp
-12.11
-ppppppppppppppppppppppppppppppppppppppppppppppppppppppppp
-12.13
-ppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp
-12.13
-ppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp
-12.13
+
 10  aaaa aaaa aa
 19  aaaa aaaa aaaa aaaa aaa
 28  aaaa aaaa aaaa aaaa aaaa aaaa aaaa
