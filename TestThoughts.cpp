@@ -10,7 +10,7 @@
 int main () {
   int fd;
 
-  if((fd=serialOpen("/dev/ttyACM0",9600))<0){
+  if((fd=serialOpen("/dev/ttyAMA0",9600))<0){
     fprintf(stderr,"Unable to open serial device: %s\n",strerror(errno));
     return 1;
   }
@@ -34,7 +34,7 @@ void setup() {
 
 void loop() {
 
-    if(Serial.available()>0) {
+    if(Serial.available()>0) { 
 		strnSerial.readString()
         int sensorValue = analogRead(A0);
         float voltage = sensorValue * (14.0/1023.0);
@@ -47,9 +47,11 @@ void loop() {
 }
 
 /***  OUTPUT ***/
+pppppp pppppp
 pppppppppppp
+
 12.13
-ppppppppppppppppppppp
+ppppppppppppp pppp pppp
 12.13
 pppppppppppppppppppppppppppppp
 12.13

@@ -21,5 +21,5 @@ int main () {
     fflush(stdout);
 	
   }
-  usleep(900000);
+  usleep(2000);
 }
