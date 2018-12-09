@@ -10,7 +10,8 @@ int main() {
 
 	while(true) {
 		string ph = ps.getPH();
-		cout << ph << "\n";
+		cout << "ph:  " << ps.getPH() << "\n";
+		cout << "tds: " << ps.getTDS() << "\n";
 		fflush(stdout);
 	}
 }

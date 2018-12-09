@@ -12,7 +12,7 @@ public:
 
 	piSer();
 	std::string getPH();
-	//float getTDS();
+	std::string getTDS();
 };
 
 #endif
