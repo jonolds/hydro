@@ -9,6 +9,7 @@
 #include <cstring>
 #include <wiringPi.h>
 #include <cstdio>
+#include <string>
 
 using namespace std;
 
@@ -22,17 +23,49 @@ piSer::piSer() {
 }
 
 string piSer::getPH() {
-	cout << "in getPH().\n";
-	string ph;
-	char ch;
-	while(serialDataAvail(fd)) {
-		putchar(ch = serialGetchar(fd));
-		ph += ch;
-		delay(100);
+	int sampleSize = 5;
+	float vals[sampleSize + 2];
+	int ch;
+	//serialPutchar(fd, 'p');
+	for(int i = 0; i < (sampleSize + 2); i++) {
+		string ph;
+		while(serialGetchar(fd) != '[')
+			delay(100);
+		while((ch = serialGetchar(fd)) != ']') {
+			ph += ch;
+			delay(100);
+		}
+		vals[i] = stof(ph);
 	}
-	
-	return ph;
+	float averagePh = 0.0;
+	for(int i = 2; i < sampleSize + 2; i++) {
+		averagePh = averagePh + vals[i];
+	}
+	averagePh = averagePh/(float)sampleSize;
+	return std::to_string(averagePh);
 }
+
+//string piSer::getPH() {
+//	string ph;
+//	char ch;
+//	//serialPutchar(fd, 'p');
+//	while(serialGetchar(fd) != '[')
+//		delay(100);
+//	while((ch = serialGetchar(fd)) != ']') {
+//		ph += ch;
+//		delay(100);
+//	}
+//	return ph;
+//}
+
+
+
+
+
+
+
+
+
 
 //float piSer::getTDS() {
 //	//serialPutchar(fd, 'p');

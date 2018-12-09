@@ -9,9 +9,8 @@ int main() {
 	piSer ps;
 
 	while(true) {
-		const char* ph = ps.getPH().c_str() + 'n';
-		cout << std::strlen(ph) << endl;
-		printf("ph: %s", ph);
+		string ph = ps.getPH();
+		cout << ph << "\n";
 		fflush(stdout);
 	}
 }

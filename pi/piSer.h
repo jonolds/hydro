@@ -8,7 +8,7 @@ class piSer {
 public:
 	int fd;
 	const int baud = 9600;
-	const char* deviceName = "/dev/ttyACM0";
+	const char* deviceName = "/dev/ttyACM1";
 
 	piSer();
 	std::string getPH();

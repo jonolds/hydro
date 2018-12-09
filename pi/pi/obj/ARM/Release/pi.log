@@ -1,13 +1,13 @@
-﻿Build started 12/9/2018 6:12:18 AM.
+﻿Build started 12/9/2018 4:54:55 PM.
      1>Project "V:\hp\pi\pi\pi.vcxproj" on node 2 (Build target(s)).
      1>InitializeBuildStatus:
-         Touching "V:\hp\pi\pi\obj\ARM\Release\PiSer.tlog\unsuccessfulbuild".
+         Creating "V:\hp\pi\pi\obj\ARM\Release\PiSer.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
        _ValidateSources:
          Validating sources
        _CopySources:
          Copying sources remotely to 'raspberrypi'
-         Copying file 'V:\hp\pi\main.cpp' to '/home/pi/projects/PiSer/main.cpp'
-         Skipping 'V:\hp\pi\piSer.cpp', as it is up to date.
+         Skipping 'V:\hp\pi\main.cpp', as it is up to date.
+         Copying file 'V:\hp\pi\piSer.cpp' to '/home/pi/projects/PiSer/piSer.cpp'
          Skipping 'V:\hp\pi\piSer.h', as it is up to date.
        _ValidateValidArchitecture:
          Validating architecture
@@ -15,11 +15,19 @@
        ClCompile:
          Starting remote build
          Compiling sources:
+         Skipping 'V:\hp\pi\main.cpp', as it is up to date.
          Invoking 'g++'
-         g++ -c -x c++ /home/pi/projects/PiSer/main.cpp -g1 -o "/home/pi/projects/PiSer/obj/ARM/Release/main.o" -Wall -Wswitch -W"no-deprecated-declarations" -W"empty-body" -Wconversion -W"return-type" -Wparentheses -W"no-format" -Wuninitialized -W"unreachable-code" -W"unused-function" -W"unused-value" -W"unused-variable" -O3 -fno-strict-aliasing -fomit-frame-pointer -DNDEBUG -fthreadsafe-statics -fexceptions -frtti -std=c++11
-         main.cpp
-         Done compiling '/home/pi/projects/PiSer/main.cpp'
-         Skipping 'V:\hp\pi\piSer.cpp', as it is up to date.
+         g++ -c -x c++ /home/pi/projects/PiSer/piSer.cpp -g1 -o "/home/pi/projects/PiSer/obj/ARM/Release/piSer.o" -Wall -Wswitch -W"no-deprecated-declarations" -W"empty-body" -Wconversion -W"return-type" -Wparentheses -W"no-format" -Wuninitialized -W"unreachable-code" -W"unused-function" -W"unused-value" -W"unused-variable" -O3 -fno-strict-aliasing -fomit-frame-pointer -DNDEBUG -fthreadsafe-statics -fexceptions -frtti -std=c++11
+         piSer.cpp
+         /home/pi/projects/PiSer/piSer.cpp: In member function ‘std::__cxx11::string piSer::getPH()’:
+         /home/pi/projects/PiSer/piSer.cpp:35:10: warning: conversion to ‘char’ from ‘int’ may alter its value [-Wconversion]
+             ph += ch;
+                   ^~
+         
+     1>V:\hp\pi\piSer.cpp(35,10): warning : conversion to ‘char’ from ‘int’ may alter its value [-Wconversion]
+V:\hp\pi\piSer.cpp(35,10): warning :     ph += ch;
+V:\hp\pi\piSer.cpp(35,10): warning :           ^~
+         Done compiling '/home/pi/projects/PiSer/piSer.cpp'
        Link:
          Linking objects
          Invoking 'ld'
@@ -36,7 +44,14 @@
      1>Done Building Project "V:\hp\pi\pi\pi.vcxproj" (Build target(s)).
 
 Build succeeded.
-    0 Warning(s)
+
+       "V:\hp\pi\pi\pi.vcxproj" (Build target) (1) ->
+       (ClCompile target) -> 
+         V:\hp\pi\piSer.cpp(35,10): warning : conversion to ‘char’ from ‘int’ may alter its value [-Wconversion]
+       V:\hp\pi\piSer.cpp(35,10): warning :     ph += ch;
+       V:\hp\pi\piSer.cpp(35,10): warning :           ^~
+
+    1 Warning(s)
     0 Error(s)
 
-Time Elapsed 00:00:03.83
+Time Elapsed 00:00:07.91
