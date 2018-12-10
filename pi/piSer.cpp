@@ -23,11 +23,9 @@ piSer::piSer() {
 }
 
 string piSer::getPH() {
-	int delayTime = 35;
-	int sampleSize = 3;
+
 	float vals[sampleSize + 2];
 	int ch;
-	//serialPutchar(fd, 'p');
 	for(int i = 0; i < (sampleSize + 2); i++) {
 		string ph;
 		while(serialGetchar(fd) != '[')
@@ -43,15 +41,12 @@ string piSer::getPH() {
 		averagePh = averagePh + vals[i];
 	}
 	averagePh = averagePh/(float)sampleSize;
-	return std::to_string(averagePh);
+	return to_string(averagePh);
 }
 
 string piSer::getTDS() {
-	int delayTime = 35;
-	int sampleSize = 3;
 	float vals[sampleSize + 2];
 	int ch;
-	//serialPutchar(fd, 'p');
 	for(int i = 0; i < (sampleSize + 2); i++) {
 		string tds;
 		while(serialGetchar(fd) != '<')
@@ -67,7 +62,7 @@ string piSer::getTDS() {
 		averagePh = averagePh + vals[i];
 	}
 	averagePh = averagePh/(float)sampleSize;
-	return std::to_string(averagePh);
+	return to_string(averagePh);
 }
 
 
@@ -82,20 +77,4 @@ string piSer::getTDS() {
 //		delay(100);
 //	}
 //	return ph;
-//}
-
-
-
-
-
-
-
-
-
-
-//float piSer::getTDS() {
-//	//serialPutchar(fd, 'p');
-//	//sensorValue = serialGetchar(fd);
-//	//float phValue = sensorValue*(14.0/1023.0);
-//	return getPH();
 //}
