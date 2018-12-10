@@ -1,13 +1,15 @@
-﻿Build started 12/9/2018 4:54:55 PM.
+﻿Build started 12/9/2018 9:11:51 PM.
      1>Project "V:\hp\pi\pi\pi.vcxproj" on node 2 (Build target(s)).
      1>InitializeBuildStatus:
-         Creating "V:\hp\pi\pi\obj\ARM\Release\PiSer.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+         Touching "V:\hp\pi\pi\obj\ARM\Release\PiSer.tlog\unsuccessfulbuild".
        _ValidateSources:
          Validating sources
        _CopySources:
          Copying sources remotely to 'raspberrypi'
-         Skipping 'V:\hp\pi\main.cpp', as it is up to date.
-         Copying file 'V:\hp\pi\piSer.cpp' to '/home/pi/projects/PiSer/piSer.cpp'
+         Copying file 'V:\hp\pi\HydroController.cpp' to '/home/pi/projects/PiSer/HydroController.cpp'
+         Copying file 'V:\hp\pi\main.cpp' to '/home/pi/projects/PiSer/main.cpp'
+         Skipping 'V:\hp\pi\piSer.cpp', as it is up to date.
+         Copying file 'V:\hp\pi\HydroController.h' to '/home/pi/projects/PiSer/HydroController.h'
          Skipping 'V:\hp\pi\piSer.h', as it is up to date.
        _ValidateValidArchitecture:
          Validating architecture
@@ -15,23 +17,37 @@
        ClCompile:
          Starting remote build
          Compiling sources:
-         Skipping 'V:\hp\pi\main.cpp', as it is up to date.
+         Invoking 'g++'
+         g++ -c -x c++ /home/pi/projects/PiSer/HydroController.cpp -g1 -o "/home/pi/projects/PiSer/obj/ARM/Release/HydroController.o" -Wall -Wswitch -W"no-deprecated-declarations" -W"empty-body" -Wconversion -W"return-type" -Wparentheses -W"no-format" -Wuninitialized -W"unreachable-code" -W"unused-function" -W"unused-value" -W"unused-variable" -O3 -fno-strict-aliasing -fomit-frame-pointer -DNDEBUG -fthreadsafe-statics -fexceptions -frtti -std=c++11
+         HydroController.cpp
+         Done compiling '/home/pi/projects/PiSer/HydroController.cpp'
+         Invoking 'g++'
+         g++ -c -x c++ /home/pi/projects/PiSer/main.cpp -g1 -o "/home/pi/projects/PiSer/obj/ARM/Release/main.o" -Wall -Wswitch -W"no-deprecated-declarations" -W"empty-body" -Wconversion -W"return-type" -Wparentheses -W"no-format" -Wuninitialized -W"unreachable-code" -W"unused-function" -W"unused-value" -W"unused-variable" -O3 -fno-strict-aliasing -fomit-frame-pointer -DNDEBUG -fthreadsafe-statics -fexceptions -frtti -std=c++11
+         main.cpp
+         Done compiling '/home/pi/projects/PiSer/main.cpp'
          Invoking 'g++'
          g++ -c -x c++ /home/pi/projects/PiSer/piSer.cpp -g1 -o "/home/pi/projects/PiSer/obj/ARM/Release/piSer.o" -Wall -Wswitch -W"no-deprecated-declarations" -W"empty-body" -Wconversion -W"return-type" -Wparentheses -W"no-format" -Wuninitialized -W"unreachable-code" -W"unused-function" -W"unused-value" -W"unused-variable" -O3 -fno-strict-aliasing -fomit-frame-pointer -DNDEBUG -fthreadsafe-statics -fexceptions -frtti -std=c++11
          piSer.cpp
+     1>V:\hp\pi\piSer.cpp(34,10): warning : conversion to ‘char’ from ‘int’ may alter its value [-Wconversion]
+V:\hp\pi\piSer.cpp(34,10): warning :     ph += ch;
+V:\hp\pi\piSer.cpp(34,10): warning :           ^~
+     1>V:\hp\pi\piSer.cpp(55,11): warning : conversion to ‘char’ from ‘int’ may alter its value [-Wconversion]
+V:\hp\pi\piSer.cpp(55,11): warning :     tds += ch;
+V:\hp\pi\piSer.cpp(55,11): warning :            ^~
+         Done compiling '/home/pi/projects/PiSer/piSer.cpp'
          /home/pi/projects/PiSer/piSer.cpp: In member function ‘std::__cxx11::string piSer::getPH()’:
-         /home/pi/projects/PiSer/piSer.cpp:35:10: warning: conversion to ‘char’ from ‘int’ may alter its value [-Wconversion]
+         /home/pi/projects/PiSer/piSer.cpp:34:10: warning: conversion to ‘char’ from ‘int’ may alter its value [-Wconversion]
              ph += ch;
                    ^~
+         /home/pi/projects/PiSer/piSer.cpp: In member function ‘std::__cxx11::string piSer::getTDS()’:
+         /home/pi/projects/PiSer/piSer.cpp:55:11: warning: conversion to ‘char’ from ‘int’ may alter its value [-Wconversion]
+             tds += ch;
+                    ^~
          
-     1>V:\hp\pi\piSer.cpp(35,10): warning : conversion to ‘char’ from ‘int’ may alter its value [-Wconversion]
-V:\hp\pi\piSer.cpp(35,10): warning :     ph += ch;
-V:\hp\pi\piSer.cpp(35,10): warning :           ^~
-         Done compiling '/home/pi/projects/PiSer/piSer.cpp'
        Link:
          Linking objects
          Invoking 'ld'
-         g++ -o "/home/pi/projects/PiSer/bin/ARM/Release/PiSer.out" -Wl,--no-undefined -Wl,-z,relro -Wl,-z,now -Wl,-z,noexecstack /home/pi/projects/PiSer/obj/ARM/Release/main.o /home/pi/projects/PiSer/obj/ARM/Release/piSer.o -lwiringPi
+         g++ -o "/home/pi/projects/PiSer/bin/ARM/Release/PiSer.out" -Wl,--no-undefined -Wl,-z,relro -Wl,-z,now -Wl,-z,noexecstack /home/pi/projects/PiSer/obj/ARM/Release/HydroController.o /home/pi/projects/PiSer/obj/ARM/Release/main.o /home/pi/projects/PiSer/obj/ARM/Release/piSer.o -lwiringPi
          Done linking, output file name: '/home/pi/projects/PiSer/bin/ARM/Release/PiSer.out'
          Copying file '/home/pi/projects/PiSer/bin/ARM/Release/PiSer.out' to 'V:\hp\pi\pi\bin\ARM\Release\PiSer.out'
          pi.vcxproj -> V:\hp\pi\pi\bin\ARM\Release\PiSer.out
@@ -47,11 +63,14 @@ Build succeeded.
 
        "V:\hp\pi\pi\pi.vcxproj" (Build target) (1) ->
        (ClCompile target) -> 
-         V:\hp\pi\piSer.cpp(35,10): warning : conversion to ‘char’ from ‘int’ may alter its value [-Wconversion]
-       V:\hp\pi\piSer.cpp(35,10): warning :     ph += ch;
-       V:\hp\pi\piSer.cpp(35,10): warning :           ^~
+         V:\hp\pi\piSer.cpp(34,10): warning : conversion to ‘char’ from ‘int’ may alter its value [-Wconversion]
+       V:\hp\pi\piSer.cpp(34,10): warning :     ph += ch;
+       V:\hp\pi\piSer.cpp(34,10): warning :           ^~
+         V:\hp\pi\piSer.cpp(55,11): warning : conversion to ‘char’ from ‘int’ may alter its value [-Wconversion]
+       V:\hp\pi\piSer.cpp(55,11): warning :     tds += ch;
+       V:\hp\pi\piSer.cpp(55,11): warning :            ^~
 
-    1 Warning(s)
+    2 Warning(s)
     0 Error(s)
 
-Time Elapsed 00:00:07.91
+Time Elapsed 00:00:09.12

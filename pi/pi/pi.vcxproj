@@ -66,10 +66,12 @@
     </RemotePostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\HydroController.cpp" />
     <ClCompile Include="..\main.cpp" />
     <ClCompile Include="..\piSer.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\HydroController.h" />
     <ClInclude Include="..\piSer.h" />
   </ItemGroup>
   <ItemDefinitionGroup />
