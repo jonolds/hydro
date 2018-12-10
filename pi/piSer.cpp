@@ -1,6 +1,5 @@
 #include "piSer.h"
 #include <wiringSerial.h>
-#include <drcSerial.h>
 #include <cstdio>
 #include <cerrno>
 #include <cstdlib>
@@ -9,7 +8,6 @@
 #include <cstring>
 #include <wiringPi.h>
 #include <cstdio>
-#include <string>
 
 using namespace std;
 
@@ -31,16 +29,16 @@ string piSer::getPH() {
 		while(serialGetchar(fd) != '[')
 			delay(delayTime);
 		while((ch = serialGetchar(fd)) != ']') {
-			ph += ch;
+			ph += (char)ch;
 			delay(delayTime);
 		}
 		vals[i] = stof(ph);
 	}
 	float averagePh = 0.0;
-	for(int i = 2; i < sampleSize + 2; i++) {
-		averagePh = averagePh + vals[i];
-	}
-	averagePh = averagePh/(float)sampleSize;
+	for(int i = 2; i < sampleSize + 2; i++)
+		averagePh += vals[i];
+
+	averagePh /= (float)sampleSize;
 	return to_string(averagePh);
 }
 
@@ -52,29 +50,16 @@ string piSer::getTDS() {
 		while(serialGetchar(fd) != '<')
 			delay(delayTime);
 		while((ch = serialGetchar(fd)) != '>') {
-			tds += ch;
+			tds += (char)ch;
 			delay(delayTime);
 		}
 		vals[i] = stof(tds);
 	}
+	
 	float averagePh = 0.0;
-	for(int i = 2; i < sampleSize + 2; i++) {
-		averagePh = averagePh + vals[i];
-	}
-	averagePh = averagePh/(float)sampleSize;
+	for(int i = 2; i < sampleSize + 2; i++)
+		averagePh += vals[i];
+
+	averagePh /= (float)sampleSize;
 	return to_string(averagePh);
 }
-
-
-//string piSer::getPH() {
-//	string ph;
-//	char ch;
-//	//serialPutchar(fd, 'p');
-//	while(serialGetchar(fd) != '[')
-//		delay(100);
-//	while((ch = serialGetchar(fd)) != ']') {
-//		ph += ch;
-//		delay(100);
-//	}
-//	return ph;
-//}

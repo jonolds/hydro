@@ -1,8 +1,9 @@
+#include <iostream>
 #include "HydroController.h"
 
-int main() {
+using namespace std;
 
+int main() {
 	HydroController hydro;
 	hydro.start();
-
 }
