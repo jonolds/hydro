@@ -1,4 +1,4 @@
-#include "piSer.h"
+#include "piSerial.h"
 #include <wiringSerial.h>
 #include <cstdio>
 #include <cerrno>
@@ -11,7 +11,7 @@
 
 using namespace std;
 
-piSer::piSer() {
+piSerial::piSerial() {
 	fd = serialOpen(deviceName, baud);
 	if(fd < 0) {
 		fprintf(stderr,"Unable to open serial device: %s\n",strerror(errno));
@@ -20,7 +20,7 @@ piSer::piSer() {
 	serialDataAvail(fd);
 }
 
-string piSer::getPH() {
+string piSerial::getPH() {
 
 	float vals[sampleSize + 2];
 	int ch;
@@ -42,7 +42,7 @@ string piSer::getPH() {
 	return to_string(averagePh);
 }
 
-string piSer::getTDS() {
+string piSerial::getTDS() {
 	float vals[sampleSize + 2];
 	int ch;
 	for(int i = 0; i < (sampleSize + 2); i++) {

@@ -1,9 +1,9 @@
-#ifndef PI_SER
-#define PI_SER
+#ifndef PI_SERIAL
+#define PI_SERIAL
 #include <string>
 
 
-class piSer {
+class piSerial {
 public:
 	int fd;
 	const int baud = 9600;
@@ -12,7 +12,7 @@ public:
 	int delayTime = 35;
 	int sampleSize = 3;
 
-	piSer();
+	piSerial();
 	std::string getPH();
 	std::string getTDS();
 };

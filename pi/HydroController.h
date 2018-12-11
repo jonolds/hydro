@@ -1,7 +1,6 @@
 #ifndef HYDRO_CONTROLLER
 #define HYDRO_CONTROLLER
-#include "piSer.h"
-
+#include "piSerial.h"
 
 class HydroController {
 public:
@@ -12,9 +11,7 @@ public:
 	//SETTINGS
 
 
-
-
-	piSer ps;
+	piSerial ps;
 
 	HydroController() = default;
 	void start();
@@ -23,9 +20,12 @@ public:
 	bool setPump(bool);
 	bool setLight(bool);
 
-
+	void updateServer(std::string, std::string);
 	static long getEpochstamp();
 	static std::string epochToTimeDate(long epoch);
+
+	std::string getPH();
+	std::string getTDS();
 };
 
 #endif

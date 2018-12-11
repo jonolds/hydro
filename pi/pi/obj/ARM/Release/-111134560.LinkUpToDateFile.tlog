@@ -1,1 +1,0 @@
-g++ -o "/home/pi/projects/PiSer/bin/ARM/Release/PiSer.out" -Wl,--no-undefined -Wl,-z,relro -Wl,-z,now -Wl,-z,noexecstack /home/pi/projects/PiSer/obj/ARM/Release/HydroController.o /home/pi/projects/PiSer/obj/ARM/Release/main.o /home/pi/projects/PiSer/obj/ARM/Release/piSer.o -lwiringPi

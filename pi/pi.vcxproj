@@ -27,7 +27,7 @@
     <ApplicationTypeRevision>1.0</ApplicationTypeRevision>
     <TargetLinuxPlatform>Raspberry</TargetLinuxPlatform>
     <LinuxProjectType>{8748239F-558C-44D1-944B-07B09C35B330}</LinuxProjectType>
-    <ProjectName>PiSer</ProjectName>
+    <ProjectName>PiHydro</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'" Label="Configuration">
@@ -66,9 +66,13 @@
     </RemotePostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="piSer.cpp" />
+    <ClCompile Include="HydroController.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="piSerial.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="HydroController.h" />
+    <ClInclude Include="piSerial.h" />
   </ItemGroup>
   <ItemDefinitionGroup />
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

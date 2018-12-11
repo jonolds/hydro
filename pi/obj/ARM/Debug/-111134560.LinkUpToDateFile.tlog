@@ -1,0 +1,1 @@
+g++ -o "/home/pi/projects/PiHydro/bin/ARM/Debug/PiHydro.out" -Wl,--no-undefined -Wl,-z,relro -Wl,-z,now -Wl,-z,noexecstack /home/pi/projects/PiHydro/obj/ARM/Debug/HydroController.o /home/pi/projects/PiHydro/obj/ARM/Debug/main.o /home/pi/projects/PiHydro/obj/ARM/Debug/piSerial.o -lwiringPi
